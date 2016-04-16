@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "774d53ca722275fd61605ba789639d66",
-    "content-hash": "72bd802fb018bf96959c0ecde712a020",
+    "hash": "225395088b4e8e6b2da63089197a8828",
+    "content-hash": "2a3116e0e84c2e1bad2be1657af859aa",
     "packages": [
         {
             "name": "dg/adminer-custom",
@@ -28,7 +28,7 @@
         },
         {
             "name": "instante/bootstrap-3-renderer",
-            "version": "dev-master",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/instante/bootstrap3renderer.git",
@@ -1336,9 +1336,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "instante/bootstrap-3-renderer": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

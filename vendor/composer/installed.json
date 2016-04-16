@@ -1331,8 +1331,8 @@
     },
     {
         "name": "instante/bootstrap-3-renderer",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "1.2.4",
+        "version_normalized": "1.2.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/instante/bootstrap3renderer.git",
@@ -1353,7 +1353,7 @@
         },
         "time": "2016-01-03 18:53:01",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Instante\\Bootstrap3Renderer\\": "src/"

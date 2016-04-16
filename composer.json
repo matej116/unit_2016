@@ -32,7 +32,7 @@
 		"latte/latte": "~2.3.0",
 		"tracy/tracy": "~2.3.0",
 		"dg/adminer-custom": "~1.6",
-		"instante/bootstrap-3-renderer": "@dev"
+		"instante/bootstrap-3-renderer": "^1.2"
 	},
 	"require-dev": {
 		"nette/tester": "~1.3"
