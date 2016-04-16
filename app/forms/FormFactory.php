@@ -2,6 +2,7 @@
 
 namespace App\Forms;
 
+use Instante\Bootstrap3Renderer\BootstrapRenderer;
 use Nette;
 use Nette\Application\UI\Form;
 
@@ -14,7 +15,9 @@ class FormFactory extends Nette\Object
 	 */
 	public function create()
 	{
-		return new Form;
+		$form = new Form;
+		$form->setRenderer(new BootstrapRenderer);
+		return $form;
 	}
 
 }
