@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Instante\\Bootstrap3Renderer\\' => array($vendorDir . '/instante/bootstrap-3-renderer/src'),
 );
