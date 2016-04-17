@@ -2,11 +2,11 @@
 
 {block content}
 <div id="banner">
-	<h1 n:block=title>Congratulations!</h1>
+	<h1 n:block=title>Ahoj</h1>
 </div>
 
 <div id="content">
-	<h2>You have successfully created your Nette Framework project.</h2>
+
 
 	{if $user->loggedIn}
 		<p>Přihlášeno jako {$user->identity->username}</p>
@@ -16,6 +16,49 @@
 		<a n:href="Sign:register">Register</a><br>
 		<a n:href="Sign:in">Login</a>
 	{/if}
+    <br /><br />
+
+    <div id="layout01">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="section-title">
+                        <h2><a n:href="Template01:t01">Layout #01<a/></h2>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="layout02">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="section-title">
+                        <h2><a n:href="Template02:t00">Layout #02<a/></h2>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="layout03">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="section-title">
+                        <h2><a n:href="Template03:t00">Layout #03<a/></h2>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 {/block}

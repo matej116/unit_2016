@@ -61,7 +61,7 @@ a:focus{
 	text-decoration: none;
 }
 #home{
-	background: url(../template01/img/bg1.jpg);
+	background: url(../img/bg1.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -228,7 +228,7 @@ a.down-btn span.fa.fa-angle-down {
 }
 
 #overview-video {
-	background: url(../template01/img/bg2.jpg);
+	background: url(../img/bg2.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -392,7 +392,7 @@ a.btn.send-btn:hover{
 }
 
 #clients {
-	background: url(../template01/img/bg3.jpg);
+	background: url(../img/bg3.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -454,7 +454,7 @@ ul.clients li{
 }
 
 #testimonials {
-	background: url(../template01/img/bg4.jpg);
+	background: url(../img/bg4.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
