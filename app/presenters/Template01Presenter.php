@@ -8,6 +8,7 @@
 
 namespace App\Presenters;
 
+use App\Forms\FormFactory;
 
 class Template01Presenter extends BasePresenter
 {
