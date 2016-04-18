@@ -14,7 +14,8 @@ class HomepagePresenter extends BasePresenter
         $this->template->anyVariable = 'any value';
     }
 
-    public function renderSlackAuth($code, $state){
+    public function renderSlackAuth($code, $state)
+    {
         var_dump($code);
         exit(0);
     }
