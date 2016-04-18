@@ -17,7 +17,23 @@ class HomepagePresenter extends BasePresenter
 
     public function renderSlackAuth($code, $state)
     {
-        var_dump($code);
+        $clientId = '34986258439.35667661124';
+
+        $client = new \GuzzleHttp\Client();
+        $response =  $client->post('https://slack.com/api/oauth.access', [
+            'headers' => [
+                'content-type' => 'application/json',
+            ],
+            'body' => json_encode([
+                'client_id' => $clientId,
+                'client_secret' => '0557658ce0dea7b7683f4a5921de53b0',
+                'code' => $code,
+            ]),
+        ]);
+
+        echo $response->getBody()->getContents();
+
+
         exit(0);
     }
 
