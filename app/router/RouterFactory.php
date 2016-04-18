@@ -16,7 +16,7 @@ class RouterFactory
     public static function createRouter()
     {
         $router = new RouteList;
-        $router[] = new Route('?code=<code>&state=<state>', 'Homepage:slackAuth');
+        $router[] = new Route('/slack-auth?code=<code>&state=<state>', 'Homepage:slackAuth');
         $router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
         return $router;
     }
