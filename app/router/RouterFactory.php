@@ -10,14 +10,15 @@ use Nette\Application\Routers\Route;
 class RouterFactory
 {
 
-	/**
-	 * @return Nette\Application\IRouter
-	 */
-	public static function createRouter()
-	{
-		$router = new RouteList;
-		$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
-		return $router;
-	}
+    /**
+     * @return Nette\Application\IRouter
+     */
+    public static function createRouter()
+    {
+        $router = new RouteList;
+        $router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
+        $router[] = new Route('/?code=<code>&state=<state>', 'Homepage:slackAuth');
+        return $router;
+    }
 
 }
