@@ -32,7 +32,8 @@
 		"latte/latte": "~2.3.0",
 		"tracy/tracy": "~2.3.0",
 		"dg/adminer-custom": "~1.6",
-		"instante/bootstrap-3-renderer": "^1.2"
+		"instante/bootstrap-3-renderer": "^1.2",
+		"maknz/slack": "^1.7"
 	},
 	"require-dev": {
 		"nette/tester": "~1.3"
