@@ -12,13 +12,12 @@ namespace App\Model;
 class FileMessageStorage implements IMessageStorage
 {
 
-	const FILE = __DIR__  . '/../data/messages.json';
 
-
+	private $file =  __DIR__  . '/../data/messages.json';
 
 	public function getMessages()
 	{
-		return json_decode(file_get_contents(self::FILE));
+		return json_decode(file_get_contents($this->file));
 	}
 
 	/**
