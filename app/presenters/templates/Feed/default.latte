@@ -31,32 +31,9 @@
             </div>
 
             <!-- Widget content -->
-            <div class="padd sscroll" n:snippet="feed">
-
-                <ul class="chats">
-
-                    {foreach $messages as $message}
-                    <!-- Chat by us. Use the class "by-me". -->
-                    {* n:class="$message->authorEmail === $userEmail ? by-me : by-other" *}
-                    <li class="by-me">
-                        {* pull-right for by-other *}
-                        <div class="avatar pull-left">
-                            <img src="img/user.jpg" alt=""/>
-                        </div>
-
-                        <div class="chat-content">
-                            <!-- In meta area, first include "name" and then "time" -->
-                            <div class="chat-meta">{$message->authorEmail} <span class="pull-right">{$message->timestamp|date:'j.n.Y G:i'}</span></div>
-                            {$message->text}
-                            <div class="clearfix"></div>
-                        </div>
-                    </li>
-
-                    {/foreach}
-
-                </ul>
-
-            </div>
+            {snippet feed}
+                {include ../components/feed.latte}
+            {/snippet}
 
         </div>
 

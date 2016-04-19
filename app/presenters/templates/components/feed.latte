@@ -1,0 +1,30 @@
+{**
+ * @param $messages
+ *}
+
+<div class="padd sscroll">
+
+    <ul class="chats">
+
+        {foreach $messages as $message}
+        <!-- Chat by us. Use the class "by-me". -->
+        {* n:class="$message->authorEmail === $userEmail ? by-me : by-other" *}
+        <li class="by-me">
+            {* pull-right for by-other *}
+            <div class="avatar pull-left">
+                <img src="http://www.gravatar.com/avatar/{md5($message->authorEmail)}?d=wavatar&s=40" alt="{$message->authorEmail}"/>
+            </div>
+
+            <div class="chat-content">
+                <!-- In meta area, first include "name" and then "time" -->
+                <div class="chat-meta">{$message->authorEmail} <span class="pull-right">{$message->timestamp|date:'j.n.Y G:i'}</span></div>
+                {$message->text}
+                <div class="clearfix"></div>
+            </div>
+        </li>
+
+        {/foreach}
+
+    </ul>
+
+</div>

@@ -29,7 +29,7 @@ class DbMessageStorage implements IMessageStorage
 		return $this->db->table($name);
 	}
 
-	public function getMessages($limit = 50)
+	public function getMessages($limit = 20)
 	{
 		$selection = $this->getTable()->order('timestamp DESC');
 		if ($limit) {

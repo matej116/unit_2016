@@ -294,58 +294,9 @@
 
             <div class="panel-body">
                 <!-- Widget content -->
-                <div class="padd sscroll">
 
-                    <ul class="chats">
+                {include ../components/feed.latte messages => $newMessages}
 
-
-                        {foreach $newMessages as $zprava}
-
-                        {if $iterator->even}
-                        <li class="by-other">{/if}
-                            {if $iterator->odd}
-                        <li class="by-me">{/if}
-                            <!-- Use the class "pull-right" in avatar -->
-                            {if $iterator->even}
-                            <div class="avatar pull-right">
-                                <img src="img/user22.png" alt=""/>
-                            </div>
-
-                            {/if}
-
-                            {if $iterator->odd}
-                            <div class="avatar pull-left">
-                                <img src="img/user.jpg" alt=""/>
-                            </div>
-                            {/if}
-
-                            <div class="chat-content">
-                                <!-- In the chat meta, first include "time" then "name" -->
-                                <div class="chat-meta">3 hours ago <span class="pull-right">Jenifer Smith</span></div>
-                                {$zprava['text']}
-                                <div class="clearfix"></div>
-                            </div>
-                        </li>
-
-
-                        {/foreach}
-
-
-                    </ul>
-
-                </div>
-                <!-- Widget footer -->
-                <div class="widget-foot">
-
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Type your message here...">
-                        </div>
-                        <button type="submit" class="btn btn-info">Send</button>
-                    </form>
-
-
-                </div>
             </div>
 
 
