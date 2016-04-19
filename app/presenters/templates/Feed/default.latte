@@ -2,7 +2,7 @@
 
 {default $userEmail = 'user@local.cz'}
 
-<div class="col-lg-4 col-md-4 portlets">
+<div class="col-md-offset-3 col-md-6 portlets">
     <!-- Widget -->
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -19,7 +19,7 @@
             <!-- Widget footer -->
             <div class="widget-foot">
 
-                {form postForm class=>"form-inline"}
+                {form postForm class => "form-inline"}
                     {input email value => $userEmail}
                     <div class="form-group">
                         {input text class => 'form-control'}
