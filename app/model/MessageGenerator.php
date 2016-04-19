@@ -66,19 +66,19 @@ class MessageGenerator
 
 	protected function vote()
 	{
-		$messageIds = $this->db->table('messages')->where('timestamp > CURDATE()')->fetchPairs('id', 'id');
+		$messages = $this->db->table('messages')->where('timestamp > CURDATE()')->fetchAll();
 
-		if (count($messageIds) === 0) {
+		if (count($messages) === 0) {
 			return FALSE;
 		}
 
-		$id = $this->faker->randomElement($messageIds);
+		$message = $this->faker->randomElement($messages);
 
 		try {
 			$this->db->table('votes')->insert([
-				'message_id' => $id,
+				'message_id' => $message->id,
 				'email' => $this->email(),
-				'timestamp' => $this->faker->dateTimeBetween('-20 hours'),
+				'timestamp' => $this->faker->dateTimeBetween($message->timestamp),
 			]);
 		} catch (UniqueConstraintViolationException $ex) {
 			return FALSE;
