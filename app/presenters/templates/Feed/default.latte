@@ -19,12 +19,13 @@
             <!-- Widget footer -->
             <div class="widget-foot">
 
-                <form class="form-inline">
+                {form postForm class=>"form-inline"}
+                    {input email value => $userEmail}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Type your message here...">
+                        {input text class => 'form-control'}
                     </div>
-                    <button type="submit" class="btn btn-info">Send</button>
-                </form>
+                    {input submit class => 'btn btn-info'}
+                {/form}
 
 
             </div>
