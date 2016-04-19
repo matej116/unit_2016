@@ -3,7 +3,8 @@
 # https://nette.org/security-warning
 #
 parameters:
-
+	slack:
+		access_token: 'xoxp-34986258439-35039689301-35800781524-d4f186f382'
 
 php:
 	date.timezone: Europe/Prague
@@ -24,3 +25,5 @@ services:
 	- App\Forms\FormFactory
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory::createRouter
+
+	- App\Model\FileMessageStorage
