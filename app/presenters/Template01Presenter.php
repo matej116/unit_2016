@@ -9,11 +9,17 @@
 namespace App\Presenters;
 
 use App\Forms\FormFactory;
+use App\Model\IMessageStorage;
 
 class Template01Presenter extends BasePresenter
 {
   /** @var FormFactory @inject */
 	public $formFactory;
+
+  /**
+   * @var IMessageStorage @inject
+   */
+  public $messageStorage;
 
   protected function createComponentForm()
   {
@@ -31,6 +37,11 @@ class Template01Presenter extends BasePresenter
 
         $this->template->items = $items;
 
+    }
+
+    public function renderFeed()
+    {
+      $this->template->messages = $this->messageStorage->getMessages();
     }
 
 
