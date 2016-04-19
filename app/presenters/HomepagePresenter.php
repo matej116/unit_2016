@@ -61,6 +61,6 @@ class HomepagePresenter extends BasePresenter
 
     private function getJsonFromResponse(MessageInterface $response)
     {
-        return Nette\Utils\Json::decode($response->getBody());
+        return Nette\Utils\Json::decode($response->getBody(), Nette\Utils\Json::FORCE_ARRAY);
     }
 }

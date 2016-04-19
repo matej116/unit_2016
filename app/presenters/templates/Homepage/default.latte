@@ -1,64 +1,13 @@
 {* This is the welcome page, you can delete it *}
 
 {block content}
-<div id="banner">
-	<h1 n:block=title>Ahoj</h1>
-</div>
 
-<div id="content">
-	<a href="https://slack.com/oauth/authorize?scope=incoming-webhook&client_id=34986258439.35402087824&redirect_uri={link //Homepage:slackAuth}"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
-	
-	{if $user->loggedIn}
-		<p>Přihlášeno jako {$user->identity->username}</p>
-		<a n:href="Sign:out">Odhlásit</a>
-	{else}
-		<p>Nepřihlášeno</p>
-		<a n:href="Sign:register">Register</a><br>
-		<a n:href="Sign:in">Login</a>
-	{/if}
-    <br /><br />
+    <a n:href="Feed:" class="btn btn-large">
+        Feed
+    </a>
 
-    <div id="layout01">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="section-title">
-                        <h2><a n:href="Template01:home">Layout #01<a/></h2>
-                        <hr>
-                    </div>
+    <a n:href="Dashboard:" class="btn btn-large">
+        Dashboard
+    </a>
 
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="layout02">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="section-title">
-                        <h2><a n:href="Template02:t00">Layout #02<a/></h2>
-                        <hr>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="layout03">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="section-title">
-                        <h2><a n:href="Template03:t00">Layout #03<a/></h2>
-                        <hr>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
 {/block}
