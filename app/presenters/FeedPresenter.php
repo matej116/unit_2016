@@ -4,8 +4,10 @@
 namespace App\Presenters;
 
 
+use App\Model\DbMessageStorage;
 use App\Model\FileMessageStorage;
 use App\Model\IMessageStorage;
+use App\Model\MessageGenerator;
 
 class FeedPresenter extends BasePresenter
 {
@@ -15,8 +17,6 @@ class FeedPresenter extends BasePresenter
 
 	public function renderDefault()
 	{
-		$this->messageStorage->postMessage('test@test.cz', 'Message text');
-
 		$this->template->messages = $this->messageStorage->getMessages();
 	}
 

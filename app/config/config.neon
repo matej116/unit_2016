@@ -27,3 +27,4 @@ services:
 	router: App\RouterFactory::createRouter
 
 	- App\Model\DbMessageStorage
+	- App\Model\MessageGenerator
