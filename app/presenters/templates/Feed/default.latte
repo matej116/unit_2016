@@ -67,7 +67,7 @@
 
 {/block}
 {block scripts}
-    {include <div id="parent"></div>}
+    {include #parent}
     <script>
         setInterval(function() {
             $.nette.ajax(document.location.href);
