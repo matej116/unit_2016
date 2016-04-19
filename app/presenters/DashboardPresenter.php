@@ -1,21 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ducan
- * Date: 19. 4. 2016
- * Time: 11:39
- */
+
 
 namespace App\Presenters;
 
+use App\Model\IMessageStorage;
 
 class DashboardPresenter extends BasePresenter
 {
+	/** @var  IMessageStorage @inject */
+	public $messageStorage;
 
-    public function renderDashboard() {
+	public function renderDefault()
+	{
 
-        
-
-    }
+	}
 
 }
