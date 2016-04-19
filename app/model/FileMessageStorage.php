@@ -2,6 +2,7 @@
 
 
 namespace App\Model;
+use Nette\Utils\Json;
 
 
 /**
@@ -27,7 +28,7 @@ class FileMessageStorage implements IMessageStorage
 
 	public function getMessages()
 	{
-		return json_decode(file_get_contents($this->file));
+		return Json::decode(file_get_contents($this->file), Json::FORCE_ARRAY);
 	}
 
 	/**
@@ -36,7 +37,7 @@ class FileMessageStorage implements IMessageStorage
 	 */
 	public function postMessage($email, $text)
 	{
-		
+
 	}
 	
 	public function vote($email, $messageId)
