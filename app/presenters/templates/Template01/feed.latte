@@ -49,16 +49,21 @@
             </div>
         </div>
 
+        {foreach $messages as $message}
 
-        <div class="row">
-            <div class="col-md-12 col-sm-4">
-                <div class="service">
-                    <span class="fa fa-bicycle fa-3x"></span>
-                    <h4>Adam Novák</h4>
-                    <p>Zrovna jsem si koupil kolo na zmrzlinu</p>
+            <div class="row">
+                <div class="col-md-12 col-sm-4">
+                    <div class="serviceFeed">
+                        <span class="fa fa-bicycle fa-3x"></span>
+                        <h4>{$message['authorEmail']}</h4>
+                        <p>{$message['text']}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+
+        {/foreach}
+
+
 
     </div>
 </div>

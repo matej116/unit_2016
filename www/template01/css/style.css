@@ -252,12 +252,22 @@ a.down-btn span.fa.fa-angle-down {
 
 .service{
 	border: 1px solid #222;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-bottom: 0px;
 	transition: all 0.3s;
 	position: relative;
-	padding: 60px 25px;
+	padding: 20px 25px;
 }
+
+.serviceFeed{
+	border: 1px solid #cccccc;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	transition: all 0.3s;
+	position: relative;
+	padding: 20px 100px;
+}
+
 .service:hover>h4,
 .service:hover>span.fa{
 	color: #c59a6d;
