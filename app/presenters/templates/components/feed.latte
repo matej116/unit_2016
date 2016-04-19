@@ -23,13 +23,14 @@
                 <div class="clearfix"></div>
                 {if $showVoters}
                 <div class="voters">
+                    {? unset($vote)}
                     {if}
-                        Voted by:
+                        A'me:
                         {foreach $message->related('votes') as $vote}
                             <strong>{$vote->email}</strong>{sep},{/sep}
                         {/foreach}
                     {else}
-                        No votes yet
+
                     {/if isset($vote)}
                 </div>
                 {else}
