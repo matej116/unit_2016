@@ -10,7 +10,7 @@ use Nette\Database\UniqueConstraintViolationException;
 
 class MessageGenerator
 {
-	/** @var \Faker\Generator  */
+	/** @var \Faker\Generator */
 	protected $faker;
 	/**
 	 * @var Context
@@ -43,6 +43,27 @@ class MessageGenerator
 		}
 	}
 
+	protected function email()
+	{
+		static $mostEmails = [
+			"krecek.peter@example.net",
+			"adam52@example.org",
+			"dhorvat@example.org",
+			"spicha@example.com",
+			"lubos87@example.org",
+			"neumanova.rudolf@example.net",
+			"rozsypalova.kamila@example.org",
+			"maria10@example.com",
+			"vitova.vladislav@example.org",
+			"vitova.vladislava@example.org",
+		];
+		if ($this->faker->boolean(80)) {
+			return $this->faker->randomElement($mostEmails);
+		} else {
+			return $this->faker->safeEmail;
+		}
+	}
+
 	protected function vote()
 	{
 		$messageIds = $this->db->table('messages')->where('timestamp > CURDATE()')->fetchPairs('id', 'id');
@@ -56,7 +77,7 @@ class MessageGenerator
 		try {
 			$this->db->table('votes')->insert([
 				'message_id' => $id,
-				'email' => $this->faker->safeEmail,
+				'email' => $this->email(),
 				'timestamp' => $this->faker->dateTimeBetween('-20 hours'),
 			]);
 		} catch (UniqueConstraintViolationException $ex) {
@@ -70,8 +91,8 @@ class MessageGenerator
 	{
 		$this->db->table('messages')->insert([
 			'timestamp' => $this->faker->dateTimeBetween('-3 second'),
-		    'authorEmail' => $this->faker->safeEmail,
-		    'text' => $this->faker->realText()
+			'authorEmail' => $this->email(),
+			'text' => $this->faker->realText(),
 		]);
 	}
 
