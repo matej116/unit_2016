@@ -26,4 +26,4 @@ services:
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory::createRouter
 
-	- App\Model\FileMessageStorage
+	- App\Model\DbMessageStorage

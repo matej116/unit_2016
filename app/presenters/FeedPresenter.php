@@ -15,6 +15,8 @@ class FeedPresenter extends BasePresenter
 
 	public function renderDefault()
 	{
+		$this->messageStorage->postMessage('test@test.cz', 'Message text');
+
 		$this->template->messages = $this->messageStorage->getMessages();
 	}
 
