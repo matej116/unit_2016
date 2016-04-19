@@ -31,12 +31,16 @@
                 {/if}
 
                 <div class="clearfix">
-                    {form postForm class => "form-inline ajax", style=>"padding-bottom: 20px"}
-                        {input email value => $userEmail}
-                        <div class="form-group">
-                            {input text class => 'form-control'}
+                    {form postForm class => "form-inline ajax row", style=>"padding-bottom: 20px"}
+                        <div class="form-group col-sm-3">
+                            {input email class => 'form-control', placeholder => 'E-mail'}
                         </div>
-                        {input submit class => 'btn btn-info'}
+                        <div class="form-group col-sm-3">
+                            {input text class => 'form-control', placeholder => 'Text'}
+                        </div>
+                        <div class="form-group col-sm-2">
+                            {input submit class => 'btn btn-info'}
+                        </div>
                     {/form}
                 </div>
 
