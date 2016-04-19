@@ -14,6 +14,9 @@ class HomepagePresenter extends BasePresenter
     /** @var Model\SlackApi @inject */
     public $slackApi;
 
+    /** @var Model\DbMessageStorage @inject */
+    public $messagesStorage;
+
     private $CLIENT_ID = '34986258439.35402087824';
     private $CLIENT_SECRET = '2f05735ef69278dc7eeff195591f85ce';
 
@@ -41,21 +44,32 @@ class HomepagePresenter extends BasePresenter
 
         $responseJSON = $this->sendApiRequest($requestArray, 'oauth.access');
 
-        dump($responseJSON);
-        die();
+        $token = $responseJSON['access_token'];
 
         $this->slackApi->saveToken($token);
 
-        $this->redirect('this');
+        $this->redirect('default');
     }
 
     public function actionHistory()
     {
-        $token = $this->slackApi->getToken();
-        $requestArray = array('toekn' => $token,
+        $token = $this->slackApi->getToken(); //xoxp-34986258439-35514919412-35877375588-79da75bb83
+
+        $requestArray = array('token' => $token,
             'channel' => 'C10VBLY6N');
 
         $responseJSON = $this->sendApiRequest($requestArray, 'channels.history');
+
+        $messages = $responseJSON['messages'];
+
+
+        foreach($messages as $message){
+            //$this->messagesStorage->postMessage($message['user'], $message['text']);
+            var_dump($message['user'] . ' - ' .$message['text']);
+            die();
+        }
+
+        $this->redirect('default');
     }
 
     public function renderTest()

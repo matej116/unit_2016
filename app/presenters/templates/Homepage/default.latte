@@ -10,4 +10,30 @@
         Dashboard
     </a>
 
+    <div class="container text-center">
+        <div class="content">
+            <h2>Práce je i zábava!</h2>
+            <hr>
+            <div class="lead header-text btn">
+                <h1><span id="head-title"></span></h1>
+            </div>
+        </div>
+
+
+    </div>
+    {block scripts}
+        {include #parent}
+        <script>
+            $(function () {
+                $("#head-title").typed({
+                    strings: ["#A'me", "#Unit Coding 2016", "#Napůl Češi", '#Gamifikace', '#Dashboard', '#Feeds'],
+                    typeSpeed: 100,
+                    loop: true,
+                    startDelay: 100
+                });
+            });
+        </script>
+    {/block}
+
+
 {/block}
