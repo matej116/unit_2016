@@ -15,9 +15,6 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(2,	'a',	'$2y$10$ML.08UKoSDXBjcVF0IrZWOr2fHRXLSoALma.Jd4jHL0PQpnOkyjV.');
-
 DROP TABLE IF EXISTS `votes`;
 CREATE TABLE `votes` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
