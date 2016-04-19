@@ -90,7 +90,7 @@ class MessageGenerator
 	private function message()
 	{
 		$this->db->table('messages')->insert([
-			'timestamp' => $this->faker->dateTimeBetween('-3 second'),
+			'timestamp' => $this->faker->dateTimeBetween('now'),
 			'authorEmail' => $this->email(),
 			'text' => $this->faker->realText(),
 		]);
