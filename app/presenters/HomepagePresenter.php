@@ -63,14 +63,14 @@ class HomepagePresenter extends BasePresenter
         $messages = $responseJSON['messages'];
 
 
-        $lastTimestamp = $this->slackApi->cache->load('last-slact-ts', 0);
+        $lastTimestamp = $this->slackApi->cache->load('last-slack-ts', 0);
 
         foreach($messages as $message){
 
             if ($message['ts'] > $lastTimestamp) {
 
-                if (isset($message['user'])) {
-                    $user = $message['user'];
+                if (isset($message['username'])) {
+                    $user = $message['username'];
 
                     $this->messagesStorage->postMessage($user, $message['text'], $message['ts']);
                 }
