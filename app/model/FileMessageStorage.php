@@ -13,7 +13,17 @@ class FileMessageStorage implements IMessageStorage
 {
 
 
-	private $file =  __DIR__  . '/../data/messages.json';
+	private $file;
+
+	/**
+	 * FileMessageStorage constructor.
+	 * @param string $file
+	 */
+	public function __construct($file = NULL)
+	{
+		$this->file = $file ?: __DIR__  . '/../data/messages.json';
+	}
+
 
 	public function getMessages()
 	{
