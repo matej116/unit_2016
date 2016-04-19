@@ -18,10 +18,20 @@ class Template01Presenter extends BasePresenter
   protected function createComponentForm()
   {
     $form = $this->formFactory->create();
-    $form->addText('test_text1', 'Test text 1:')
-         ->addText('test_text2', 'Test text 2:')
-         ->addText('test_text3', 'Test text 3:')
-         ->addSubmit('send', 'Send:');
+    $form->addText('test_text1', 'Test text 1:');
+      $form->addText('test_text2', 'Test text 2:');
+      $form->addText('test_text3', 'Test text 3:');
+      $form->addSubmit('send', 'Send:');
     return $form;
   }
+
+    public function renderHome() {
+
+        $items = ['franta', 'kuzmic', 'matej'];
+
+        $this->template->items = $items;
+
+    }
+
+
 }
