@@ -66,7 +66,7 @@ class MessageGenerator
 
 	protected function vote()
 	{
-		$messages = $this->db->table('messages')->where('timestamp > CURDATE()')->fetchAll();
+		$messages = $this->db->table('messages')->where('timestamp > ( NOW() - INTERVAL 20 MINUTE )')->fetchAll();
 
 		if (count($messages) === 0) {
 			return FALSE;

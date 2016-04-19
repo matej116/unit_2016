@@ -1,7 +1,8 @@
 {**
  * @param $messages
+ * @showVoters = FALSE
  *}
-
+{default $showVoters = FALSE}
 <div class="padd sscroll">
 
     <ul class="chats">
@@ -20,6 +21,22 @@
                 <div class="chat-meta">{$message->authorEmail} <span class="pull-right">{$message->timestamp|date:'j.n.Y G:i'}</span></div>
                 {$message->text}
                 <div class="clearfix"></div>
+                {if $showVoters}
+                <div class="voters">
+                    {if}
+                        Voted by:
+                        {foreach $message->related('votes') as $vote}
+                            <strong>{$vote->email}</strong>{sep},{/sep}
+                        {/foreach}
+                    {else}
+                        No votes yet
+                    {/if isset($vote)}
+                </div>
+                {else}
+                <div class="voteCount">
+                    {$message->related('votes')->count('id')} votes
+                </div>
+                {/if}
             </div>
         </li>
 
