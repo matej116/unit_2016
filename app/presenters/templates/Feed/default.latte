@@ -19,7 +19,7 @@
             <!-- Widget footer -->
             <div class="widget-foot">
 
-                {form postForm class => "form-inline"}
+                {form postForm class => "form-inline ajax"}
                     {input email value => $userEmail}
                     <div class="form-group">
                         {input text class => 'form-control'}
@@ -31,7 +31,7 @@
             </div>
 
             <!-- Widget content -->
-            <div class="padd sscroll">
+            <div class="padd sscroll" n:snippet="feed">
 
                 <ul class="chats">
 
@@ -64,3 +64,13 @@
     </div>
 
 </div>
+
+{/block}
+{block scripts}
+    {include <div id="parent"></div>}
+    <script>
+        setInterval(function() {
+            $.nette.ajax(document.location.href);
+        }, 1000);
+    </script>
+{/block}

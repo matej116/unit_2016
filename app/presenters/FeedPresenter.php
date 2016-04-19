@@ -22,6 +22,7 @@ class FeedPresenter extends BasePresenter
 	public function renderDefault()
 	{
 		$this->template->messages = $this->messageStorage->getMessages();
+		$this->redrawControl('feed');
 	}
 
 	public function createComponentPostForm()
