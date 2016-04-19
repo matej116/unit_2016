@@ -33,16 +33,18 @@ class FeedPresenter extends BasePresenter
 	public function createComponentPostForm()
 	{
 		$form = $this->formFactory->create();
-		$form->addHidden('email')
-			->setRequired();
+		$form->addText('email')
+			->setRequired()
+			->setDefaultValue($this->getParameter('email'));
 		$form->addText('text')
+			->setDefaultValue('')
 			->setRequired();
 
-		$form->addSubmit('submit');
+		$form->addSubmit('submit', 'Odeslat');
 
 		$form->onSuccess[] = function($form, $values) {
 			$this->messageStorage->postMessage($values->email, $values->text);
-			$this->redirect('this');
+			$this->redirect('this', ['email' => $values->email]);
 		};
 
 		return $form;
