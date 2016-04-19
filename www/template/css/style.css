@@ -4938,3 +4938,9 @@ span.customSelect.changed {
 .customSelectInner {
     background:url(../img/customSelect-arrow.gif) no-repeat center right;
 }
+
+
+table tr.top {
+    font-size: 1.2em;
+    font-weight: bold;
+}

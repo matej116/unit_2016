@@ -54,11 +54,11 @@
 
                     {foreach $top10People as $person}
 
-                    <tr>
+                    <tr n:class="$iterator->counter <= 3 ? top">
                         <td>
                             <img src="http://www.gravatar.com/avatar/{md5($person->authorEmail)}?d=wavatar&s=40" alt="{$person->authorEmail}"/>
                         </td>
-                        <td>{$person->authorEmail}</td>
+                        <td>{$iterator->counter}. {$person->authorEmail}</td>
                         <td>
                             {$person->messages}
                         </td>
