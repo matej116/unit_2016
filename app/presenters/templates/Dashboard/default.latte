@@ -7,24 +7,24 @@
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class="info-box blue-bg">
             <i class="fa fa-cloud-download"></i>
-            <div class="count">{$dailyStats['votes']} {$dailyStats['messages']}</div>
-            <div class="title">Dnes</div>
+            <div class="count">{$dailyStats['votes']}</div>
+            <div class="title">Dnes hlasů</div>
         </div><!--/.info-box-->
     </div><!--/.col-->
 
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class="info-box brown-bg">
             <i class="fa fa-comments"></i>
-            <div class="count">1.240</div>
-            <div class="title">Týden</div>
+            <div class="count">{$dailyStats['messages']}</div>
+            <div class="title">Dnes zpráv</div>
         </div><!--/.info-box-->
     </div><!--/.col-->
 
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class="info-box dark-bg">
             <i class="fa fa-thumbs-o-up"></i>
-            <div class="count">7.523</div>
-            <div class="title">Měsíc</div>
+            <div class="count">{$totalMsgCount}</div>
+            <div class="title">Celkem zpráv</div>
         </div><!--/.info-box-->
     </div><!--/.col-->
 
@@ -38,9 +38,6 @@
             <div class="panel-heading">
                 <h2><i class="fa fa-flag-o red"></i>Nejoblíbenější uživatelé</h2>
                 <div class="panel-actions">
-                    <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                    <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                    <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
                 </div>
             </div>
             <div class="panel-body">
@@ -89,9 +86,6 @@
             <div class="panel-heading">
                 <h2><i class="fa fa-flag-o red"></i>Nejlepší příspěvky</h2>
                 <div class="panel-actions">
-                    <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                    <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                    <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
                 </div>
             </div>
 
@@ -130,8 +124,6 @@
             <div class="panel-heading">
                 <div class="pull-left">Nové zprávy</div>
                 <div class="widget-icons pull-right">
-                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
-                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
                 </div>
                 <div class="clearfix"></div>
             </div>

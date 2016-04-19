@@ -136,5 +136,10 @@ class DbMessageStorage implements IMessageStorage
 			->order('votes DESC')->limit(10);
 	}
 
+	public function totalCount()
+	{
+		return $this->getTable()->count('*');
+	}
+
 
 }
