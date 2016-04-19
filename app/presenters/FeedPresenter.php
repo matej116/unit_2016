@@ -9,6 +9,7 @@ use App\Model\DbMessageStorage;
 use App\Model\FileMessageStorage;
 use App\Model\IMessageStorage;
 use App\Model\MessageGenerator;
+use Nette\InvalidArgumentException;
 
 class FeedPresenter extends BasePresenter
 {
@@ -19,9 +20,13 @@ class FeedPresenter extends BasePresenter
 	/** @var  FormFactory @inject */
 	public $formFactory;
 
-	public function renderDefault()
+	public function renderDefault($sort = 'time')
 	{
-		$this->template->messages = $this->messageStorage->getMessages();
+		if (!in_array($sort, ['time', 'votes'])) {
+			throw new InvalidArgumentException;
+		}
+		$this->template->messages = $this->messageStorage->getMessages(20, $sort);
+		$this->template->sort = $sort;
 		$this->redrawControl('feed');
 	}
 

@@ -29,11 +29,17 @@ class DbMessageStorage implements IMessageStorage
 		return $this->db->table($name);
 	}
 
-	public function getMessages($limit = 20)
+	public function getMessages($limit = 20, $sort = 'time')
 	{
-		$selection = $this->getTable()->order('timestamp DESC');
+		$selection = $this->getTable();
 		if ($limit) {
 			$selection->limit($limit);
+		}
+		if ($sort === 'time') {
+			$selection->order('timestamp DESC');
+		}
+		if ($sort === 'votes') {
+			$selection->order('COUNT(:votes.id) DESC')->group('messages.id');
 		}
 		return $selection;
 	}

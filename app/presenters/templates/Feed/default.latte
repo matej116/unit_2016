@@ -8,8 +8,13 @@
         <div class="panel-heading">
             <div class="pull-left">Nové zprávy</div>
             <div class="widget-icons pull-right">
-                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
-                <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                <a n:href="this sort => $sort === 'time' ? 'votes' : 'time'" class="wminimize">
+                    {if $sort === 'time'}
+                        Seřadit podle počtu hlasů
+                    {else}
+                        Seřadit od nejnovějšího
+                    {/if}
+                </a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -19,14 +24,21 @@
             <!-- Widget footer -->
             <div class="widget-foot">
 
-                {form postForm class => "form-inline ajax"}
-                    {input email value => $userEmail}
-                    <div class="form-group">
-                        {input text class => 'form-control'}
-                    </div>
-                    {input submit class => 'btn btn-info'}
-                {/form}
+                {if $sort == 'votes'}
+                <p class="alert alert-info">
+                    Seřazeno podle počtu hlasů, <a n:href="this sort => time">Seřadit od nejnovějšího</a>
+                </p>
+                {/if}
 
+                <div class="clearfix">
+                    {form postForm class => "form-inline ajax", style=>"padding-bottom: 20px"}
+                        {input email value => $userEmail}
+                        <div class="form-group">
+                            {input text class => 'form-control'}
+                        </div>
+                        {input submit class => 'btn btn-info'}
+                    {/form}
+                </div>
 
             </div>
 
@@ -47,7 +59,7 @@
     {include #parent}
     <script>
         setInterval(function() {
-            $.nette.ajax(document.location.href);
+            $.nette.ajax({link this});
         }, 1000);
     </script>
 {/block}
