@@ -63,7 +63,7 @@
     {include #parent}
     <script>
         setInterval(function() {
-            $.nette.ajax({link this});
+            $.nette.ajax(document.location.href);
         }, 1000);
     </script>
 {/block}

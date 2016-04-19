@@ -3,6 +3,7 @@
  * @showVoters = FALSE
  *}
 {default $showVoters = FALSE}
+{default $userEmail = ''}
 <div class="padd sscroll">
 
     <ul class="chats">
@@ -23,15 +24,26 @@
                 <div class="clearfix"></div>
                 {if $showVoters}
                 <div class="voters">
+                    {var $userVoted = FALSE}
+
                     {? unset($vote)}
                     {if}
                         A'me:
                         {foreach $message->related('votes') as $vote}
                             <strong>{$vote->email}</strong>{sep},{/sep}
+                            {if $vote->email === $userEmail}{? $userVoted = TRUE}{/if}
                         {/foreach}
                     {else}
 
                     {/if isset($vote)}
+
+                    {if !$userVoted && $userEmail}
+                    <div class="clearfix">
+                        <a n:href="ame! id => $message->id, email => $userEmail" class="pull-right btn btn-mini btn-success ajax btn-awesome">
+                            Awesome by {$userEmail}!
+                        </a>
+                    </div>
+                    {/if}
                 </div>
                 {else}
                 <div class="voteCount">
@@ -46,3 +58,9 @@
     </ul>
 
 </div>
+
+<script>
+    $(document).on('click', '.btn-awesome', function() {
+        $(this).attr('disabled', 'disabled').css('opacity', '0.5').hide();
+    });
+</script>

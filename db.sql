@@ -233,4 +233,6 @@ INSERT INTO `votes` (`id`, `email`, `timestamp`, `message_id`) VALUES
 (102,	'spicha@example.com',	'2016-04-18 19:01:28',	10),
 (103,	'maria10@example.com',	'2016-04-19 07:15:41',	71);
 
+ALTER TABLE `votes`
+CHANGE `id` `id` int NOT NULL AUTO_INCREMENT FIRST;
 -- 2016-04-19 10:33:32

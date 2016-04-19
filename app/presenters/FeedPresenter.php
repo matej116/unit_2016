@@ -27,6 +27,7 @@ class FeedPresenter extends BasePresenter
 		}
 		$this->template->messages = $this->messageStorage->getMessages(20, $sort);
 		$this->template->sort = $sort;
+		$this->template->userEmail = $this->getParameter('email');
 		$this->redrawControl('feed');
 	}
 
@@ -37,17 +38,28 @@ class FeedPresenter extends BasePresenter
 			->setRequired()
 			->setDefaultValue($this->getParameter('email'));
 		$form->addText('text')
-			->setDefaultValue('')
-			->setRequired();
+			->setDefaultValue('');
 
 		$form->addSubmit('submit', 'Odeslat');
 
 		$form->onSuccess[] = function($form, $values) {
-			$this->messageStorage->postMessage($values->email, $values->text);
-			$this->redirect('this', ['email' => $values->email]);
+			if ($values->text && $values->email) {
+				$this->messageStorage->postMessage($values->email, $values->text);
+			}
 		};
 
+		$form->onSubmit[] = function($form) {
+			$this->redirect('this', ['email' => $form->values->email]);
+		};
+
+
 		return $form;
+	}
+
+	public function handleAme($id, $email = 'noone')
+	{
+		$this->messageStorage->vote($email, $id);
+		$this->sendPayload();
 	}
 
 }
