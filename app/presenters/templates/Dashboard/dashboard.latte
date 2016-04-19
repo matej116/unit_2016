@@ -266,7 +266,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                        <span class="username">Jenifer Smith</span>
+                        <span class="username">Moje uživatelské jméno</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
@@ -307,73 +307,19 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
                 <li class="active">
-                    <a class="" href="index.html">
+                    <a class="" n:href="dashboard">
                         <i class="icon_house_alt"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
+
+                <li>
+                    <a class="" n:href="Feed:default">
                         <i class="icon_document_alt"></i>
                         <span>Feeds</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
-                    <ul class="sub">
-                        <li><a class="" href="form_component.html">Form Elements</a></li>
-                        <li><a class="" href="form_validation.html">Form Validation</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_desktop"></i>
-                        <span>UI Fitures</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="general.html">Elements</a></li>
-                        <li><a class="" href="buttons.html">Buttons</a></li>
-                        <li><a class="" href="grids.html">Grids</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="" href="widgets.html">
-                        <i class="icon_genius"></i>
-                        <span>Widgets</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="chart-chartjs.html">
-                        <i class="icon_piechart"></i>
-                        <span>Charts</span>
-
-                    </a>
-
                 </li>
 
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_table"></i>
-                        <span>Tables</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="basic_table.html">Basic Table</a></li>
-                    </ul>
-                </li>
-
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_documents_alt"></i>
-                        <span>Pages</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="profile.html">Profile</a></li>
-                        <li><a class="" href="login.html"><span>Login Page</span></a></li>
-                        <li><a class="" href="blank.html">Blank Page</a></li>
-                        <li><a class="" href="404.html">404 Error</a></li>
-                    </ul>
-                </li>
 
             </ul>
             <!-- sidebar menu end-->
@@ -535,29 +481,6 @@
 
                         {var $count = 1}
 
-                        {foreach $top10Messages as $post}
-
-
-                            <tr>
-                                <td>Today</td>
-                                <td>
-                                    {$post['text']|truncate:10}
-                                </td>
-                                <td>
-                                    <span class="badge bg-important">{$post['votes']}</span>
-                                </td>
-                                <td>
-                                    <span class="profile-ava">
-                                        <img alt="" class="simple" src="img/avatar1_small.jpg">
-                                    </span>
-                                </td>
-                            </tr>
-
-
-
-                        {/foreach}
-
-
                         <tr>
                             <td>Yesterday</td>
                             <td>
@@ -567,7 +490,9 @@
                                 <span class="badge bg-success">Task</span>
                             </td>
                             <td>
-                                <div id="work-progress2"></div>
+                                <span class="profile-ava">
+                                        <img alt="" class="simple" src="img/avatar-mini2.jpg">
+                                  </span>
                             </td>
                         </tr>
                         <tr>
@@ -579,7 +504,9 @@
                                 <span class="badge bg-success">Task</span>
                             </td>
                             <td>
-                                <div id="work-progress3"></div>
+                                <span class="profile-ava">
+                                        <img alt="" class="simple" src="img/avatar-mini.jpg">
+                                  </span>
                             </td>
                         </tr>
                         <tr>
@@ -596,6 +523,31 @@
                                       </span>
                             </td>
                         </tr>
+
+                        {foreach $top10Messages as $post}
+
+
+                            <tr>
+                                <td>Today</td>
+                                <td>
+                                    {$post['text']}
+                                </td>
+                                <td>
+                                    <span class="badge bg-important">{$post['votes']}</span>
+                                </td>
+                                <td>
+                                    <span class="profile-ava">
+                                        <img alt="" class="simple" src="img/avatar1_small.jpg">
+                                    </span>
+                                </td>
+                            </tr>
+
+
+
+                        {/foreach}
+
+
+
                         <tr>
                             <td>24-10-14</td>
                             <td>
@@ -680,7 +632,7 @@
                                         <div class="chat-content">
                                             <!-- In meta area, first include "name" and then "time" -->
                                             <div class="chat-meta">John Smith <span class="pull-right">3 hours ago</span></div>
-                                            Vivamus diam elit diam, consectetur dapibus adipiscing elit.
+
                                             <div class="clearfix"></div>
                                         </div>
                                     </li>
@@ -695,7 +647,7 @@
                                         <div class="chat-content">
                                             <!-- In the chat meta, first include "time" then "name" -->
                                             <div class="chat-meta">3 hours ago <span class="pull-right">Jenifer Smith</span></div>
-                                            Vivamus diam elit diam, consectetur fconsectetur dapibus adipiscing elit.
+                                            Ahoj, půjde semnou někdo na oběd?
                                             <div class="clearfix"></div>
                                         </div>
                                     </li>
@@ -707,7 +659,7 @@
 
                                         <div class="chat-content">
                                             <div class="chat-meta">John Smith <span class="pull-right">4 hours ago</span></div>
-                                            Vivamus diam elit diam, consectetur fermentum sed dapibus eget, Vivamus consectetur dapibus adipiscing elit.
+                                            Asi ne, musím jít na schůzku.
                                             <div class="clearfix"></div>
                                         </div>
                                     </li>
@@ -725,6 +677,37 @@
                                             <div class="clearfix"></div>
                                         </div>
                                     </li>
+
+                                    {foreach $newMessages as $zprava}
+
+                                        {if $iterator->even}<li class="by-other">{/if}
+                                        {if $iterator->odd}<li class="by-me">{/if}
+                                            <!-- Use the class "pull-right" in avatar -->
+                                        {if $iterator->even}
+                                            <div class="avatar pull-right">
+                                                <img src="img/user22.png" alt=""/>
+                                            </div>
+
+                                        {/if}
+
+                                        {if $iterator->odd}
+                                            <div class="avatar pull-left">
+                                                <img src="img/user.jpg" alt=""/>
+                                            </div>
+                                        {/if}
+
+                                        <div class="chat-content">
+                                                <!-- In the chat meta, first include "time" then "name" -->
+                                                <div class="chat-meta">3 hours ago <span class="pull-right">Jenifer Smith</span></div>
+                                                    {$zprava['text']}
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+
+
+                                    {/foreach}
+
+
 
                                 </ul>
 
