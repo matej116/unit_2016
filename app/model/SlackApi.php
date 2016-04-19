@@ -12,7 +12,7 @@ use Nette\DI\Container;
 class SlackApi
 {
 
-    private $cache;
+    public $cache;
     const TOKEN_NAME = 'token';
 
     public function __construct(Container $context)

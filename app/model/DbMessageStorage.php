@@ -48,10 +48,10 @@ class DbMessageStorage implements IMessageStorage
 	 * @param $email
 	 * @param $text
 	 */
-	public function postMessage($email, $text)
+	public function postMessage($email, $text, $ts = NULL)
 	{
 		return $this->getTable()->insert([
-			'timestamp' => new DateTime,
+			'timestamp' => $ts ? DateTime::from($ts) : new DateTime,
 			'authorEmail' => $email,
 			'text' => $text,
 		])->id;

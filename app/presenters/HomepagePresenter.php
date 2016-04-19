@@ -53,7 +53,7 @@ class HomepagePresenter extends BasePresenter
 
     public function actionHistory()
     {
-        $token = $this->slackApi->getToken(); //xoxp-34986258439-35514919412-35877375588-79da75bb83
+        $token = 'xoxp-34986258439-35514919412-35877375588-79da75bb83';
 
         $requestArray = array('token' => $token,
             'channel' => 'C10VBLY6N');
@@ -63,11 +63,24 @@ class HomepagePresenter extends BasePresenter
         $messages = $responseJSON['messages'];
 
 
+        $lastTimestamp = $this->slackApi->cache->load('last-slact-ts', 0);
+
         foreach($messages as $message){
-            //$this->messagesStorage->postMessage($message['user'], $message['text']);
-            var_dump($message['user'] . ' - ' .$message['text']);
-            die();
+
+            if ($message['ts'] > $lastTimestamp) {
+
+                if (isset($message['user'])) {
+                    $user = $message['user'];
+
+                    $this->messagesStorage->postMessage($user, $message['text'], $message['ts']);
+                }
+                $lastTimestamp = $message['ts'];
+            }
+
+           // die();
         }
+        
+        $this->slackApi->cache->save('last-slack-ts', $lastTimestamp);
 
         $this->redirect('default');
     }
