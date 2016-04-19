@@ -14,11 +14,28 @@ CREATE TABLE `messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
+INSERT INTO `messages` (`id`, `timestamp`, `authorEmail`, `text`) VALUES
+(2,	'2016-04-19 10:52:38',	'test@test.cz',	'Message text'),
+(3,	'2016-04-19 11:02:43',	'test@test.cz',	'Message text'),
+(4,	'2016-04-19 11:08:58',	'a@a.cz',	'asasa'),
+(5,	'2016-04-19 11:09:40',	'sad',	'zfsdfs');
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_czech_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_czech_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(2,	'a',	'$2y$10$ML.08UKoSDXBjcVF0IrZWOr2fHRXLSoALma.Jd4jHL0PQpnOkyjV.');
 
 DROP TABLE IF EXISTS `votes`;
 CREATE TABLE `votes` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `email` int(11) NOT NULL,
+  `timestamp` datetime NOT NULL,
   `message_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_message_id` (`email`,`message_id`),
@@ -27,4 +44,4 @@ CREATE TABLE `votes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 
--- 2016-04-19 08:50:50
+-- 2016-04-19 09:49:41

@@ -20,4 +20,5 @@ interface IMessageStorage
 	 * @return TODO
 	 */
 	public function getStatistics($day, $month, $year);
+	
 }
