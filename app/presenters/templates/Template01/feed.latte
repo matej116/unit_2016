@@ -34,31 +34,36 @@
             </div>
 
             <div class="col-md-9">
-                <form autocomplete="off">
+                {form postForm}
                     <div class="row">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Put your ideas here ...">
+                            {input email class => 'form-control'}
                         </div>
 
                     </div>
-                    <textarea class="form-control" rows="10" placeholder="Message"></textarea>
+                    {input text  class => 'form-control'}
                     <div class="text-right">
-                        <a href="#" class="btn send-btn">Send</a>
+                        {input submit  class => 'btn send-btn'}
                     </div>
-                </form>
+                {/form}
             </div>
         </div>
 
+        {foreach $messages as $message}
 
-        <div class="row">
-            <div class="col-md-12 col-sm-4">
-                <div class="service">
-                    <span class="fa fa-bicycle fa-3x"></span>
-                    <h4>Adam Novák</h4>
-                    <p>Zrovna jsem si koupil kolo na zmrzlinu</p>
+            <div class="row">
+                <div class="col-md-12 col-sm-4">
+                    <div class="serviceFeed">
+                        <span class="fa fa-bicycle fa-3x"></span>
+                        <h4>{$message['authorEmail']}</h4>
+                        <p>{$message['text']}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+
+        {/foreach}
+
+
 
     </div>
 </div>
