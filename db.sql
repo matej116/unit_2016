@@ -44,4 +44,11 @@ CREATE TABLE `votes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 
+INSERT INTO `votes` (`id`, `timestamp`, `email`, `message_id`) VALUES
+(2,	'2016-04-19 10:52:38',	'test@test.cz',	'2'),
+(3,	'2016-04-19 11:02:43',	'test@test.cz',	'3'),
+(4,	'2016-04-19 11:08:58',	'a@a.cz',	'2'),
+(6,	'2016-04-19 11:09:40',	'sad',	'3');
+(7,	'2016-04-19 11:09:40',	'test@test.cz',	'3');
+(8,	'2016-04-19 11:09:40',	'sad',	'4');
 -- 2016-04-19 09:49:41

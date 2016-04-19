@@ -15,10 +15,6 @@ class HomepagePresenter extends BasePresenter
     private $CLIENT_ID = '34986258439.35402087824';
     private $CLIENT_SECRET = '2f05735ef69278dc7eeff195591f85ce';
 
-    public function renderDefault()
-    {
-        $this->template->anyVariable = 'any value';
-    }
 
     /**
      * @param $contentArray Array (like JSON) of parameters to send
