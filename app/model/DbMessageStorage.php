@@ -95,8 +95,8 @@ class DbMessageStorage implements IMessageStorage
 		$dayEnd = $dayBegin->modifyClone('+24 hours');
 
 		return [
-			'votes' => $this->getTable('votes')->where('timestamp BETWEEN (?, ?)', $dayBegin, $dayEnd)->count('*'),
-			'messages' => $this->getTable('messages')->where('timestamp BETWEEN (?, ?)', $dayBegin, $dayEnd)->count('*'),
+			'votes' => $this->getTable('votes')->where('timestamp BETWEEN ? AND ?', $dayBegin, $dayEnd)->count('*'),
+			'messages' => $this->getTable('messages')->where('timestamp BETWEEN ? AND ?', $dayBegin, $dayEnd)->count('*'),
 		];
 	}
 
