@@ -28,3 +28,4 @@ services:
 
 	- App\Model\DbMessageStorage
 	- App\Model\MessageGenerator
+	- App\Model\SlackApi
